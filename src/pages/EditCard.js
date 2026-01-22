@@ -4,11 +4,15 @@ import CardForm from "../components/CardForm";
 import { getCards, updateCard } from "../services/api";
 
 export default function EditCard() {
-  /* TODO: Complete the EditCard page
+    /* TODO: Complete the EditCard page
     - display a form for editing a card (use the CardForm component to display the form)
     - handle form submission to call updateCard API
     - handle loading, busy, and error states
     - style as a form UI */
 
-  return <main></main>;
+    return (
+        <main>
+            <h1>EditCard</h1>
+        </main>
+    );
 }
