@@ -7,14 +7,23 @@ import EditCard from "./pages/EditCard";
 import "./App.css";
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cards" element={<CardList />} />
-        {/* TODO: Complete the routes */}
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <div className="app">
+            <BrowserRouter>
+                <Navbar />
+
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="cards" element={<CardList />} />
+                    {/* TODO: Complete the routes */}
+                    <Route path="cards/new" element={<AddCard />} />
+                    <Route path="cards/:id/edit" element={<EditCard />} />
+                    <Route
+                        path="*"
+                        element={<h1 className="not-found">Page Not Found</h1>}
+                    />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
