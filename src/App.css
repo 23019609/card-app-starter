@@ -171,6 +171,81 @@ nav a:hover,
     background-color: #406d73;
 }
 
+/* card form */
+.card-form {
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.card-form h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* form groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25em;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.35em;
+    color: #406d73;
+}
+
+.form-group input {
+    padding: 0.65em 0.75em;
+    font-size: 1rem;
+    border-radius: 0.5em;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6495ed;
+    box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.15);
+}
+
+.form-group input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+}
+
+/* submit button */
+.form-submit {
+    width: 100%;
+    padding: 0.75em;
+    margin-top: 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.75em;
+    background-color: #6495ed;
+    color: #fff;
+    transition:
+        background-color 0.2s,
+        transform 0.1s,
+        box-shadow 0.1s;
+}
+
+.form-submit:hover {
+    background-color: #406d73;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* layout */
 .app {
     min-height: 100vh;

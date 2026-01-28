@@ -17,7 +17,7 @@ export default function EditCard() {
             try {
                 setError(null);
                 const cards = await getCards();
-                const found = cards.find(c => c.id.toString() === id);
+                const found = cards.find((c) => c.id.toString() === id);
                 setCard(found);
             } catch (err) {
                 setError("Failed to load card");
@@ -44,7 +44,7 @@ export default function EditCard() {
 
     if (loading) {
         return (
-            <main className="form-page">
+            <main className="form-page container">
                 <p>Loading...</p>
             </main>
         );
@@ -52,14 +52,14 @@ export default function EditCard() {
 
     if (!card) {
         return (
-            <main className="form-page">
+            <main className="form-page container">
                 <p>Card not found</p>
             </main>
         );
     }
 
     return (
-        <main className="form-page">
+        <main className="form-page container">
             <h1>Edit Card</h1>
 
             {error && <p className="error">{error}</p>}

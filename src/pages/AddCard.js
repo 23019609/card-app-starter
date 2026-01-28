@@ -15,22 +15,19 @@ export default function AddCard() {
             await addCard(card);
             navigate("/cards");
         } catch (err) {
-            setError("Failed to add card" + card_name);
+            setError("Failed to add card" + card.card_name);
         } finally {
             setBusy(false);
         }
     };
 
     return (
-        <main className="form-page">
+        <main className="form-page container">
             <h1>Add Card</h1>
 
             {error && <p className="error">{error}</p>}
 
-            <CardForm
-                onSubmit={handleSubmit}
-                disabled={busy}
-            />
+            <CardForm onSubmit={handleSubmit} disabled={busy} />
         </main>
     );
 }

@@ -5,6 +5,7 @@ import CardList from "./pages/CardList";
 import AddCard from "./pages/AddCard";
 import EditCard from "./pages/EditCard";
 import "./App.css";
+import Login from "./pages/Login";
 
 export default function App() {
     return (
@@ -22,6 +23,7 @@ export default function App() {
                         path="*"
                         element={<h1 className="not-found">Page Not Found</h1>}
                     />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
             </BrowserRouter>
         </div>

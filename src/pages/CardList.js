@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { getCards, deleteCard } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function CardList() {
     /* TODO: Complete the CardList page
@@ -9,10 +10,18 @@ export default function CardList() {
     - handle loading, busy, and error states
     - style as a grid UI */
 
+    const navigate = useNavigate();
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState("");
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/login");
+        }
+    }, []);
 
     useEffect(() => {
         async function fetchCards() {

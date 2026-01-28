@@ -23,6 +23,9 @@ export default function Navbar() {
                 <NavLink to="/cards/new" className={getClass} end>
                     Add Card
                 </NavLink>
+                <NavLink to="/login" className={getClass} end>
+                    Login
+                </NavLink>
             </nav>
         </header>
     );

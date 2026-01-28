@@ -18,10 +18,20 @@ const API_URL = process.env.REACT_APP_API_URL || "";
 
 console.log("API_URL:", API_URL);
 
+function authHeader() {
+    const token = localStorage.getItem("token");
+    return token ? { Authorization: `Bearer ${token}` } : {};
+}
+
 export async function getCards() {
     // GET /allcards (provided as reference)
-    const res = await fetch(`${API_URL}/allcards`);
-
+    const res = await fetch(`${API_URL}/allcards`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            ...authHeader(),
+        },
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
 }
@@ -62,4 +72,12 @@ export async function deleteCard(id) {
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
+}
+
+export function login(credentials) {
+    return fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+    });
 }
