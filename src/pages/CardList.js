@@ -17,13 +17,6 @@ export default function CardList() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            navigate("/login");
-        }
-    }, []);
-
-    useEffect(() => {
         async function fetchCards() {
             try {
                 setLoading(true);

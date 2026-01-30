@@ -42,6 +42,7 @@ export async function addCard(card) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            ...authHeader(),
         },
         body: JSON.stringify(card),
     });
@@ -56,6 +57,7 @@ export async function updateCard(id, card) {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
+            ...authHeader(),
         },
         body: JSON.stringify(card),
     });
@@ -68,6 +70,9 @@ export async function deleteCard(id) {
     // TODO: implement DELETE /deletecard/:id
     const res = await fetch(`${API_URL}/deletecard/${id}`, {
         method: "DELETE",
+        headers: {
+            ...authHeader(),
+        },
     });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

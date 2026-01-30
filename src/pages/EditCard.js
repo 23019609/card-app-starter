@@ -13,6 +13,13 @@ export default function EditCard() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+
+    useEffect(() => {
         const loadCard = async () => {
             try {
                 setError(null);

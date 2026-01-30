@@ -8,6 +8,8 @@ export default function Card({ card, onDelete, busy }) {
     - delete button calling onDelete with the card object
     - style as a card UI */
 
+    const token = localStorage.getItem("token");
+
     return (
         <div className="card">
             <img
@@ -27,13 +29,15 @@ export default function Card({ card, onDelete, busy }) {
                         </button>
                     </Link>
 
-                    <button
-                        onClick={() => onDelete(card)}
-                        disabled={busy}
-                        className="delete"
-                    >
-                        {busy ? "Deleting..." : "Delete"}
-                    </button>
+                    {token && (
+                        <button
+                            onClick={() => onDelete(card)}
+                            disabled={busy}
+                            className="delete"
+                        >
+                            Delete
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
